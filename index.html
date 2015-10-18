@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="initial-scale=1.0; user-scalable=yes;">
+		<title>SEM | Semantic Elements Model</title>
+
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="jquery-ui.css" media="all">
+	<link href="sem-style.css" rel="stylesheet">
+<style>textarea#textbox{ min-width: 90%; margin: 20px 20px 20px 60px; height: 340px; overflow: hidden; }</style>
+</head>
+<body>
+   <article role="main">
+        <header>
+            <h1>SEM - Semantic Element Modeling</h1>
+        <h2>Utilizing HTML5 tags and elements to create a document, without any divs or containers</h2>
+        </header>
+        <p>SEM is a trial markup ideology which takes advantage of the Semantic Elements and use them as markup to create a fully supported Browser document.</p>
+        <aside><em>See:</em> <a href="http://www.w3schools.com/html/html5_semantic_elements.asp" title="sematics">HTML5 Semantic Elements</a> for difference between HTML5 Semantic Elements and NON HTML5 Semantic Elements</aside>
+        <p>In the HTML5 standard, the &lt;article&gt; element defines a complete, self-contained block of related elements. The &lt;section&gt; element is defined as a block of related elements. SEM adds a bit of styling attributes to the Elements and turns these elements into selectors of their own.</p><p>I do not intend on rebuilding the wheel by making the Elements completely a "framework-ready rework" of HTML5, this experiment is only to allow minimal amount of styling so as to not throw off any DOM relationships the Semantic Elements have with any supported Browser. The only real intention is to relieve the programmer from the use of the &lt;div&gt; tag and apply style attributes directly to the Semantic elements.</p>
+        <blockquote>Please Note that this practice is not recommended for any professional production level Website. You may pass W3C Validation but it is not guaranteed that all associated markup of the 'SEM' style will be universally accepted.</blockquote> 
+    </article>
+
+    <article role="main">
+        <header>
+            <h2>SEM - Semantic Element Modeling</h2>
+            <h3>a.k.a.: Semantic Elements Styling</h3>
+        </header>
+           <p>ARTICLE: &#34;A self-contained composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.&#34;</p>
+        <section>
+            <h3>Part 1: Section inside of an Article</h3>
+            <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
+            <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
+            <code>h1, h2, h3 tags etc.</code>
+        </section>
+    </article>
+
+        <article role="main">
+            <header>
+                <h2>SEM - Semantic Element Modeling</h2>
+                <h3>Part 2: Aside inside of Article</h3>
+            </header>
+            <h3>One Aside inside of an Article</h3>
+            <p>Just remember how HTML5 Validation works: you must have headers inside of a section and mostly inside of an Article element as well. <br><code>h1, h2, h3 tags etc.</code></p>
+            <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
+            <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
+                <aside>
+                    <h3>One Aside inside of Article</h3>
+                    <p>The &lt;aside&gt; element is used to represent content that is tangibly related to the content surrounding it, but could be considered separate.</p> 
+                    <p>According to W3CValidtor: <b>The complementary role is unnecessary for element aside.</b></p>
+                </aside>
+                
+        </article>
+
+<h2>The above Article looks like this in HTML</h2>
+<form name="form1" method="post" action="index.po">
+<textarea name="textarea" id="textbox" readonly>
+        <article role="main">
+            <header>
+                <h2>SEM - Semantic Element Modeling</h2>
+                <h3>Part 2: Aside inside of Article</h3>
+            </header>
+            <h3>One Aside inside of an Article</h3>
+            <p>Just remember how HTML5 Validation works: you must have headers inside of a section and mostly inside of an Article element as well. <br><code>h1, h2, h3 tags etc.</code></p>
+            <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
+            <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
+                <aside>
+                    <h3>One Aside inside of Article</h3>
+                     <p>The &lt;aside&gt; element is used to represent content that is tangibly related to the content surrounding it, but could be considered separate.</p> 
+                    <p>According to W3CValidtor: <b>The complementary role is unnecessary for element aside.</b></p>
+                </aside>
+        </article>
+</textarea>
+</form>
+
+        <article>
+            <header>
+                <h2>SEM - Semantic Element Modeling</h2>
+                <h3>Part 3: Article with Aside outside of Article</h3>
+            </header>
+                <h4>One Article</h4>
+                <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
+                <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
+        </article>
+            <aside>
+                <h5>One Aside inside of Article</h5>
+                <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
+                <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
+            </aside>
+
+                <article>
+                    <h3>Part 4: Section inside of a Article</h3>
+                    <p>ARTICLE: &#34;A self-contained composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.&#34;</p>
+                    <section>
+                        <h2>Section inside of Article; Aside follows Section</h2>
+                        <p>The <code>section</code> element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading.</p>
+                    </section>
+                    <aside>
+                        <h5>Aside outside of first Section but still inside Article</h5>
+                        <p>Since this aside is contained within an article, a parser should understand that the content of this aside is directly related to the article itself.<p>
+                        <blockquote>
+                            above note <a href="http://html5doctor.com/aside-revisited/" title="from"><em>from</em></a>
+                        </blockquote>
+                        <h3>Glossary</h3>
+                          <dl>
+                            <dt>Lorem</dt>
+                            <dd>ipsum dolor sit amet</dd>
+                          </dl>
+                        <p>Ends aside and Part 4.</p>
+                    </aside>
+                </article>
+
+                <article>
+                    <h3>Part 5: Section inside of a Article</h3>
+                    <p>ARTICLE: &#34;A self-contained composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.&#34;</p>
+                    <h4>Note I added Bootstrap 'basic' columns for convenience - no media support</h4>
+                    <section class="col-4">
+                        <h2>Section inside of Article</h2>
+                        <p>The <code>section</code> element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading.</p>
+                    </section>
+                    <section class="col-4">
+                        <h2>Section inside of Article</h2>
+                        <p>The <code>section</code> element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading.</p>
+                    </section>
+                    <section class="col-4">
+                        <h2>Section inside of Article</h2>
+                        <p>The <code>section</code> element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading.</p>
+                    </section>
+                    <aside>
+                        <h5>Aside outside of first Section but still inside Article</h5>
+                        <p>Since this aside is contained within an article, a parser should understand that the content of this aside is directly related to the article itself.<p>
+                        <blockquote>
+                            above note <a href="http://html5doctor.com/aside-revisited/" title="from"><em>from</em></a>
+                        </blockquote>
+                        <h3>Glossary</h3>
+                          <dl>
+                            <dt>Lorem</dt>
+                            <dd>ipsum dolor sit amet</dd>
+                          </dl>
+                        <p>Ends aside and Part 4.</p>
+                    </aside>
+                </article>
+ 
+<footer>
+    <section>
+        <h4>Footer with ul li and a elements inside of a Section</h4>
+        <ul>
+        <li><a href="" title="top of page">Top of Page</a></li>
+        <li><a href="" title="top of page">Top of Page</a></li>
+        <li><a href="" title="top of page">Top of Page</a></li>
+        <li><a href="" title="top of page">Top of Page</a></li>
+        </ul>
+    </section>
+</footer>
+</body>
+</html> 
