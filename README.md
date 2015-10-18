@@ -17,7 +17,7 @@ Open for contributions, PLEASE.
 Tradesouthwest 2015
 Larry Judd Oliver - Phoneix, AZ USA
 http://tradesouthwest.com
-demo: http://truelisting.me/dev/sem/ 
+demo: http://leadspilot.com/dev/sem/
 
 ## License
 Licensed under Apache Open Source. You can use this script for free for any private or commercial projects.
