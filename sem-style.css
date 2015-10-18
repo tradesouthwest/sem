@@ -1,0 +1,237 @@
+/**
+=== SEM Semantic Element Model(ing) ===
+Tradesouthwest 2015
+Larry Judd Oliver - Phoneix, AZ USA
+http://tradesouthwest.com
+demo: http://truelisting.me/dev/sem/
+*/
+
+/**
+MICRO RESET
+==================================================== */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, menu, time, mark, audio, video {
+margin : 0;
+padding : 0;
+border : 0;
+outline : 0;
+font-size : 100%;
+vertical-align : baseline;
+background : transparent;
+}
+/**
+HTML5 SEM Magic :-)
+==================================================== */
+html {
+height : 100%;
+}
+
+/** 
+Had to give some kind of margin/padding to `body` by limiting the width.
+You can resize this as to your viewport -> (most need no left/right margin). 
+---------------------------------------------------- */
+body {
+font-family : Arial, sans-serif;
+background : #fff;
+color : #1a1a1a;
+max-width : 96%;
+min-width : 320px;
+margin : 0 auto;
+padding : 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, nav, section {
+    display: block; 
+    box-sizing: border-box;
+    width: 98.8992%; 
+    margin: 0 auto; 
+    padding: 10px 20px;
+}
+audio, canvas, video {
+display : inline-block;
+}
+audio:not([controls]) {
+display : none;
+}
+[hidden] {
+display : none;
+}
+
+/** 
+FORM ELEMENTS (Normalizing)
+==================================================== */
+textarea, button, input, select {
+font-size : 100%;
+padding : 0;
+margin : 0;
+vertical-align : baseline;
+vertical-align : middle;
+}
+textarea {
+overflow : auto;
+min-height : 20px;
+max-height : 300px;
+max-width : 400px;
+min-width : 150px;
+}
+input[type="checkbox"], input[type="radio"] {
+box-sizing : border-box;
+padding : 0;
+vertical-align : middle;
+}
+input[type="button"], input[type="submit"], button {
+cursor : pointer;
+}
+input[type="search"] {
+box-sizing : content-box;
+}
+button {
+width : auto;
+overflow : visible;
+}
+
+/**
+TAGS (Normalizing and some styles)
+==================================================== */
+a, p {
+font-size : 1em;
+line-height : 1.1250em;
+margin : 1.1250em;
+}
+hr {
+height : 0;
+box-sizing : content-box;
+}
+pre {
+overflow : auto;
+}
+code, kbd, pre, samp {
+font-family : monospace, monospace;
+font-size : 1em;
+}
+xmp {
+max-width : 98%;
+overflow : hidden;
+margin : 1em;
+}
+button, input, optgroup, select, textarea {
+margin : 0;
+font : inherit;
+color : inherit;
+}
+small {
+font-size : 85%;
+}
+strong, th {
+font-weight : bold;
+}
+td, td img {
+vertical-align : top;
+}
+sub, sup {
+font-size : 75%;
+line-height : 0;
+position : relative;
+vertical-align : baseline;
+}
+sup {
+top : -0.5em;
+}
+sub {
+bottom : -0.25em;
+}
+pre {
+padding : 15px;
+white-space : pre;
+white-space : pre-wrap;
+overflow-wrap : break-word;
+}
+blockquote {
+margin : 0.67em 2em;
+border-left : 3px solid #ddd;
+padding : 8px 12px;
+}
+
+/**
+Good ole clearfix - add Section if needed
+==================================================== */
+.clearfix:before, .clearfix:after,
+article:before, article:after { content: ""; display: table; }
+.clearfix:after, article:after { clear: both; }
+
+/**
+BOOTSTRAP COLUMNS added for convenience (w/out media formatting)
+==================================================== */
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    float: left; background: #e3efef; display: block; overflow: hidden; 
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+  .col-11 {
+    width: 91.66666667%;
+  }
+  .col-10 {
+    width: 83.33333333%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-8 {
+    width: 66.66666667%;
+  }
+  .col-7 {
+    width: 58.33333333%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-5 {
+    width: 41.66666667%;
+  }
+  .col-4 {
+   width: 33.33333333%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-2 {
+    width: 16.66666667%;
+  }
+  .col-1 {
+    width: 8.33333333%;
+  }
+/**
+SELF STYLE - here is where you can add your attributes
+==================================================== */
+section {
+border-bottom : thin solid #eee;
+border-top : thin solid #eee;
+margin-bottom : 8px;
+margin-top: 8px;
+}
+article {
+border-bottom : thin solid #ccc;
+border-top : thin solid #ccc;
+margin-bottom : 12px;
+margin-top: 12px;
+}
+aside {
+border-top : thin dotted #7bb;
+border-bottom : thin dotted #7bb;
+margin-bottom : 1em;
+}
+nav ul {
+list-style : none;
+}
+nav li {
+min-height : 20px;
+line-height : inherit;
+}
+a {
+min-height : 24px;
+margin : 8px auto;
+}
+blockquote a {
+display : inline;
+}
