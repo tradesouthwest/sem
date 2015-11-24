@@ -18,6 +18,7 @@ Tradesouthwest 2015
 Larry Judd Oliver - Phoneix, AZ USA
 http://tradesouthwest.com
 demo: http://truelisting.me/dev/sem/
+helpful linkfor github commands: https://www.atlassian.com/git/
 
 ## License
 Licensed under Apache Open Source. You can use this script for free for any private or commercial projects.
