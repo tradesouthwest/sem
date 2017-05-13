@@ -17,7 +17,7 @@ Open for contributions, PLEASE.
 Tradesouthwest 2015
 Larry Judd Oliver - Phoneix, AZ USA
 http://tradesouthwest.com
-demo: http://truelisting.me/dev/sem/
+demo: http://tradesouthwest.com/dev/sem/
 helpful linkfor github commands: https://www.atlassian.com/git/
 
 ## License
