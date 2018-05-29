@@ -25,3 +25,58 @@ Note: Aside is semantically ordered as an 'aside', meaning it is reserved for sm
 
 Further Reading: 
 http://oli.jp/2009/html5-structure1/
+
+
+ADD TO END OF STYLE SHEET FOR BOOTSTRAP LIKE RESPONSIVE STYLING
+/**
+Good ole clearfix - add Section if needed
+==================================================== */
+.clearfix:before, .clearfix:after,
+article:before, article:after { content: ""; display: table; }
+.clearfix:after, article:after { clear: both; }
+
+/**
+BOOTSTRAP (type) COLUMNS added for convenience (w/out media formatting)
+==================================================== */
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    float: left; display: block; overflow: hidden; 
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+  .col-11 {
+    width: 91.66666667%;
+  }
+  .col-10 {
+    width: 83.33333333%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-8 {
+    width: 66.66666667%;
+  }
+  .col-7 {
+    width: 58.33333333%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-5 {
+    width: 41.66666667%;
+  }
+  .col-4 {
+   width: 33.33333333%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-2 {
+    width: 16.66666667%;
+  }
+  .col-1 {
+    width: 8.33333333%;
+  }
+  
+
