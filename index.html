@@ -1,161 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SEM | Semantic Elements Model for HTML5 semantics</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="assets/style-sem.css">
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="initial-scale=1.0; user-scalable=yes;">
-		<title>SEM | Semantic Elements Model</title>
+    <style>
+    </style>
+  </head> 
+<body itemscope itemtype="http://schema.org/WebPage" class="">
+ 
+    <header role="banner" itemscope itemtype="http://schema.org/WPHeader">
+    
+    <h1 itemprop="name">Live Long and Prosper</h1>
+    <h2 itemprop="description">Using only HTML5 elements with no classes. Some Ids for anchors.</h2>
+    
+    </header>
+    
+<main role="main" itemscope itemprop="mainContentOfPage">
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="jquery-ui.css" media="all">
-	<link href="sem-style.css" rel="stylesheet">
-<style>textarea#textbox{ min-width: 90%; margin: 20px 20px 20px 60px; height: 340px; overflow: hidden; }</style>
-</head>
-<body>
-   <article role="main">
-        <header>
-            <h1>SEM - Semantic Element Modelling</h1>
-        <h2>Utilizing HTML5 tags and elements to create a document, without any divs or containers</h2>
-        </header>
-        <p>SEM is a trial markup ideology which takes advantage of the Semantic Elements and use them as markup to create a fully supported Browser document.</p>
-        <aside><em>See:</em> <a href="http://www.w3schools.com/html/html5_semantic_elements.asp" title="sematics">HTML5 Semantic Elements</a> for difference between HTML5 Semantic Elements and NON HTML5 Semantic Elements</aside>
-        <p>In the HTML5 standard, the &lt;article&gt; element defines a complete, self-contained block of related elements. The &lt;section&gt; element is defined as a block of related elements. SEM adds a bit of styling attributes to the Elements and turns these elements into selectors of their own.</p><p>I do not intend on rebuilding the wheel by making the Elements completely a "framework-ready rework" of HTML5, this experiment is only to allow minimal amount of styling so as to not throw off any DOM relationships the Semantic Elements have with any supported Browser. The only real intention is to relieve the programmer from the use of the &lt;div&gt; tag and apply style attributes directly to the Semantic elements.</p>
-        <blockquote>Please Note that this practice is not recommended for any professional production level Website. You may pass W3C Validation but it is not guaranteed that all associated markup of the 'SEM' style will be universally accepted.</blockquote> 
-    </article>
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <ul><li><a href="testing.html" title="home page"><span>Main</span></a></li>
+    <li><a href="#Art" title="articles"><span>Articles</span></a></li>
+    <li><a href="#Sec" title="sections"><span>Sections</span></a></li>
+    <li><a href="#Con" title="contact form"><span>Contacts</span></a></li>
+    <li><a href="#Foo" title="home page"><span>Footer</span></a></li>
+    <li><a href="#New" title="articles"><span>News</span></a></li>
+    <li><a href="#Pri" title="sections"><span>Privacy</span></a></li>
+    <li><a href="testing.html" title="contact form" target="_blank"><span>TOS</span></a></li>
+    </ul>
+   
+    </nav>
 
-    <article role="main">
-        <header>
-            <h2>SEM - Semantic Element Modelling</h2>
-            <h3>a.k.a.: Semantic Elements Styling</h3>
-        </header>
-           <p>ARTICLE: &#34;A self-contained composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.&#34;</p>
-        <section>
-            <h3>Part 1: Section inside of an Article</h3>
-            <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
-            <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
-            <code>h1, h2, h3 tags etc.</code>
+<article>
+    <section itemscope itemtype="http://schema.org/Article">
+        <div>
+            <header>
+                <h1 itemprop="name headline"><a href="http://example.com/post" rel="nofollow" title="title">Post Title</a></h1>
+            </header>
+        </div>
+        <div id="Art">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </section>
+    <aside> 
+        <p><time id="Time"></time> &bull; 
+        <span itemprop="author" 
+              itemscope itemptype="http://schema.org/Person">
+              <a itemprop="url" href="http://example.com/author">
+              <span  itemprop="name">Author Name</span></a>
+        </span>
+        </p>
+        <figure><img src="media/350.jpeg" alt="img"/></figure>
+        <figcaption>Image of interest. Beutiful San Fransico</figcaption>
+        <p><button>More Info</button></p>
+    </aside>
+</article>
+        
+</main>
+
+    <article>
+        <section> 
+            <div id="Sec">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
         </section>
+        <aside> 
+            <div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+        </aside>
     </article>
+    
+<article>
+    <header><h4>Full width is as simple as adding Article with no Sections. <small title="small h elements styled using h tag small">Article normally wraps a Section AND an Aside.</small></h4>
+    </header>
+        <div>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+</article>
 
-        <article role="main">
+<article id="Con">
+    <div>
+        <header>
+            <h4>This table is wrapped in a Article tag followed by a Div then table is showing with no Section or further Divs</h4>
+        </header>
+    <table>
+    <thead>
+    <tr>
+    <th>Number</th>
+    <th>Player</th>
+    <th>Position</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Birthday</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>8</td>
+    <td>Marco Belinelli</td>
+    <td>G</td>
+    <td>6-5</td>
+    <td>195</td>
+    <td>03/25/1986</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>Carlos Boozer</td>
+    <td>F</td>
+    <td>6-9</td>
+    <td>266</td>
+    <td>11/20/1981</td>
+    </tr>
+    <tr>
+    <td>21</td>
+    <td>Jimmy Butler</td>
+    <td>G-F</td>
+    <td>6-7</td>
+    <td>220</td>
+    <td>09/14/1989</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+</article>
+
+<article>
+    <section>
             <header>
-                <h2>SEM - Semantic Element Modelling</h2>
-                <h3>Part 2: Aside inside of Article</h3>
+                <h4>Third width Article withh Section. <small>Section with three Asides inside.</small></h4>
             </header>
-            <h3>One Aside inside of an Article</h3>
-            <p>Just remember how HTML5 Validation works: you must have headers inside of a section and mostly inside of an Article element as well. <br><code>h1, h2, h3 tags etc.</code></p>
-            <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
-            <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
-                <aside>
-                    <h3>One Aside inside of Article</h3>
-                    <p>The &lt;aside&gt; element is used to represent content that is tangibly related to the content surrounding it, but could be considered separate.</p> 
-                    <p>According to W3CValidtor: <b>The complementary role is unnecessary for element aside.</b></p>
+            <div>
+                <aside> 
+                    <div>
+                    <p>1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
                 </aside>
-                
-        </article>
-
-<h2>The above Article looks like this in HTML</h2>
-<form name="form1" method="post" action="index.po">
-<textarea name="textarea" id="textbox" readonly>
-        <article role="main">
-            <header>
-                <h2>SEM - Semantic Element Modelling</h2>
-                <h3>Part 2: Aside inside of Article</h3>
-            </header>
-            <h3>One Aside inside of an Article</h3>
-            <p>Just remember how HTML5 Validation works: you must have headers inside of a section and mostly inside of an Article element as well. <br><code>h1, h2, h3 tags etc.</code></p>
-            <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
-            <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
-                <aside>
-                    <h3>One Aside inside of Article</h3>
-                     <p>The &lt;aside&gt; element is used to represent content that is tangibly related to the content surrounding it, but could be considered separate.</p> 
-                    <p>According to W3CValidtor: <b>The complementary role is unnecessary for element aside.</b></p>
+                <aside> 
+                    <div>
+                    <p>2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
                 </aside>
-        </article>
-</textarea>
-</form>
-
-        <article>
+                <aside> 
+                    <div>
+                    <p>3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
+                </aside>
+    </section>
+   
+            <aside> 
             <header>
-                <h2>SEM - Semantic Element Modelling</h2>
-                <h3>Part 3: Article with Aside outside of Article</h3>
+                <h4>Aside with Header</h4>
             </header>
-                <h4>One Article</h4>
-                <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
-                <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
-        </article>
-            <aside>
-                <h5>One Aside inside of Article</h5>
-                <p>Vivamus vestibulum pellentesque lorem in sollicitudin. In nec semper urna. Nulla ac dignissim felis. Quisque ultricies finibus imperdiet. Phasellus efficitur eu velit vel sollicitudin.</p>
-                <p>Fusce varius viverra dui, aliquet gravida lorem condimentum et. Cras lectus nisl, tempor ullamcorper mauris fermentum, molestie elementum dolor.</p>
+                <div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
             </aside>
 
-                <article>
-                    <h3>Part 4: Section inside of a Article</h3>
-                    <p>ARTICLE: &#34;A self-contained composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.&#34;</p>
-                    <section>
-                        <h2>Section inside of Article; Aside follows Section</h2>
-                        <p>The <code>section</code> element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading.</p>
-                    </section>
-                    <aside>
-                        <h5>Aside outside of first Section but still inside Article</h5>
-                        <p>Since this aside is contained within an article, a parser should understand that the content of this aside is directly related to the article itself.<p>
-                        <blockquote>
-                            above note <a href="http://html5doctor.com/aside-revisited/" title="from"><em>from</em></a>
-                        </blockquote>
-                        <h3>Glossary</h3>
-                          <dl>
-                            <dt>Lorem</dt>
-                            <dd>ipsum dolor sit amet</dd>
-                          </dl>
-                        <p>Ends aside and Part 4.</p>
-                    </aside>
-                </article>
-
-                <article>
-                    <h3>Part 5: Section inside of a Article</h3>
-                    <p>ARTICLE: &#34;A self-contained composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.&#34;</p>
-                    <h4>Note I added Bootstrap 'basic' columns for convenience - no media support</h4>
-                    <section class="col-4">
-                        <h2>Section inside of Article</h2>
-                        <p>The <code>section</code> element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading.</p>
-                    </section>
-                    <section class="col-4">
-                        <h2>Section inside of Article</h2>
-                        <p>The <code>section</code> element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading.</p>
-                    </section>
-                    <section class="col-4">
-                        <h2>Section inside of Article</h2>
-                        <p>The <code>section</code> element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content, typically with a heading.</p>
-                    </section>
-                    <aside>
-                        <h5>Aside outside of first Section but still inside Article</h5>
-                        <p>Since this aside is contained within an article, a parser should understand that the content of this aside is directly related to the article itself.<p>
-                        <blockquote>
-                            above note <a href="http://html5doctor.com/aside-revisited/" title="from"><em>from</em></a>
-                        </blockquote>
-                        <h3>Glossary</h3>
-                          <dl>
-                            <dt>Lorem</dt>
-                            <dd>ipsum dolor sit amet</dd>
-                          </dl>
-                        <p>Ends aside and Part 4.</p>
-                    </aside>
-                </article>
+</article>
  
-<footer>
+<article>
+        <header>
+            <h4>Third width Article withh Section. <small title="small h-tag elements">Section with three Asides inside.</small></h4>
+        </header>
+            <div>
+            <p>!. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+        <header>
+            <h4>Third width Article withh Section. <small title="small h-tag elements">Section with three Asides inside.</small></h4>
+        </header>
+            <div>
+                <aside> 
+                    <div>
+                    <p>1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p><p>when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
+                </aside>
+                <aside> 
+                    <div>
+                    <p>2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p><p>when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
+                </aside>
+                <aside> 
+                    <div>
+                    <p>3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
+                </aside>
+</article>  
+
+<article>
+    <div>        
+         <aside> 
+            <header>
+                <h4>Aside with Header</h4>
+            </header>
+                <div>
+                <p>1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+            </aside>
+                 <aside> 
+            <header>
+                <h4>This section only wrapped in Div</h4>
+            </header>
+                <div>
+                <p>2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>By wrapping three (two or more) Asides inside of a Article and a Div tag you need to set the selector attributes for the aside as: <code>article aside {
+       float: left;
+    }</code> to allow only this combination to line up from left to right. Otherwise the firts aside will end up on the right side of the page.</p>
+                </div>
+            </aside>
+                 <aside> 
+            <header>
+                <h4>Not using section tag</h4>
+            </header>
+                <div>
+                <p>3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h5><em>Did you know that SEM has <code>rtl</code> attributes already set up in the style-sheet. Just add <code>class="rtl"</code> to the body element.</em></h5><p>This rtl can be handy for more than international language support; you can use ti to reverse the whole layout if you choose.</p>
+                </div>
+            </aside>  
+    </div>
+</article>
+    
+<article>
     <section>
-        <h4>Footer with ul li and a elements inside of a Section</h4>
-        <ul>
-        <li><a href="" title="top of page">Top of Page</a></li>
-        <li><a href="" title="top of page">Top of Page</a></li>
-        <li><a href="" title="top of page">Top of Page</a></li>
-        <li><a href="" title="top of page">Top of Page</a></li>
-        </ul>
+        <form>
+        <fieldset><legend>Form Fieldset Legend</legend>
+        <p><label for ="text">Label Text</label>
+        <input type="text" name="text"></p>
+        <p><label for ="text">Label Text</label>
+        <textarea name="text" cols=25 rows=5></textarea></p>
+        <p><input type="submit" name=null value="Submit"></p>
+        </fieldset></form>
     </section>
-</footer>
+    <aside>
+        <div>
+        <form>
+        <fieldset><legend>Legend for Select </legend>
+        <p><select name="fred">
+        <option value="">options</option>
+                <option value="">options</option>
+                        <option value="">options</option>
+                                <option value="">options</option>
+        </select></p>
+        <p><label>Check </label><input type=checkbox name=checkitout value=0>
+        </p>
+        </fieldset></form>
+        </div>    
+    </aside> 
+</article>
+
+    <footer>
+    <div>
+    <h3>Live Long and Prosper</h3><h4>Semantics Only Please</h4>
+    <p>See: <a href="tradesouthwest.com/apps/sem/" title="external link" target="_blank">http://tradesouthwest.com/apps/sem</a> to learn more about SEM.</p>
+    </div>
+    </footer>
+        <script src="assets/jfunctions.js" type="text/javascript"></script>
 </body>
-</html> 
+</html>
