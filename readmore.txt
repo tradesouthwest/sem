@@ -1,0 +1,27 @@
+### SEM ###
+
+The semantic elements of HTML5 that help define individual parts of the web page are:
+
+<header>  – Defines the header of the document or section
+<main>    – Defines the main content of a document, excluding global items like nav or footer
+<nav>     – Defines navigation links
+<article> – Defines a self-contained piece of content within a document
+<section> – Defines a section within a document
+<aside>   – Defines content that is aside from main content which, should be related to surrounding (Article) content
+<mark>    – Defines highlighted or important content
+<figure>  – Defines self-contained content that is independent (photos, illustrations, videos, formulas, charts, etc)
+<figcaption> – Defines the caption for the figure
+<footer>  – Defines the footer of a document
+<time>    – Defines the time
+<div>     — the "generic flow container" we all know and love. It’s a block-level element with no additional semantic meaning (W3C:Markup, WhatWG)
+
+There are widths assigned to every HTML5 element but you can wrap elements within elements to create any layout you require.
+Nav is 100%.    
+Section is 100% width.
+Article is 2/3rds width.
+Aside is 1/3rd width.
+Note: Aside is semantically ordered as an 'aside', meaning it is reserved for smaller bits of information directly associated with the Article div content and using it as a separted content div may be breaking this HYML5 rule if the content in the Aside element is NOT associated with the Article content. In My Humble Opinion, I would say it will pass semantics only if the Aside is used for something other than related content... eg, Ads or unrelated links. 
+
+
+Further Reading: 
+http://oli.jp/2009/html5-structure1/
