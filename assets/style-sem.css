@@ -1,0 +1,757 @@
+/* SEM - Semantic Elements Markup 
+ * Author: Tradesouthwest 
+ * Mobile first set at 768px;
+ */
+/**
+MICRO RESET
+==================================================== */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, main, article, aside, figure, footer, header, menu, nav, section, menu, time, mark, audio, video {
+margin : 0;
+padding : 0;
+border : 0;
+outline : 0;
+vertical-align : baseline;
+background : transparent;
+} 
+html {
+height : 100%;
+}
+@charset "UTF-8";
+/* one liners at top for background-color easy access */
+div {           background: #f6f6f6;}
+aside {         background: #f7f9f9}
+article {       background: rgba(255,255,255, .26);}
+section  {      background: #f1f1f1;}
+nav ul    {     background: #222;}
+nav ul li a {   background: rgba(255,255,255, .95);}
+header,footer { background: rgba(242,242,242, .95);}
+
+body {          background: #e5e6e9;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:   100%;
+	margin:      7px 15px;
+	color:       #3b3b3b;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* Adding a body class gives rounded borders on almost everything */
+body.border-round section,
+body.border-round article,
+body.border-round aside,
+body.border-round header,
+body.border-round footer,
+body.border-round nav ul {
+	border-radius: .25rem;
+}
+/* Set all elements some base styling 
+   RTL style in media query and at bottom of page 
+ */
+div,
+nav,
+section,
+header,
+footer,
+article {
+	float:      left;
+	position:   relative;
+	min-height: 1px;
+	width:      100%;
+	-webkit-box-sizing:     border-box;
+       -moz-box-sizing:     border-box;
+            box-sizing:     border-box;
+            padding-top:    15px;
+            padding-bottom: 15px;
+}
+
+/* Div can be treated like a container to wrap other sections in. 
+ * Adds padding to sides of elements on page.(div is only el w/ side padding)
+ * By removing padding on widths there is less chance of sections breaking
+ * between those sensitive (ex.: 768px/769px) device widths.)
+ */
+/* Certain combination divs WILL get H-padding */
+div,
+article > header,
+article > section > header {
+	padding-left:  15px;
+	padding-right: 15px;
+}
+div {
+	background:    transparent;
+	margin-bottom: 0;
+	display:       block;
+}
+/* article followed by a div(container) can lessen top-space on first div */
+article > div {
+    padding-top: 1px;
+}
+/* Main can be used on full page or portions of page (wrapper).
+   Has no significant use-case at current, other than semantics.
+ */
+main {
+	width: 100%;
+}
+/* Article element wraps articles/sections/asides (hence the 100% width; */
+article {
+	border-bottom: thin solid #ddd;
+	min-height:    1px;
+	width:         100%;
+	margin-bottom: 7px;
+}
+header,
+footer {
+	width:         100%;
+	margin-bottom: 0px;
+	border-bottom: thin solid #ddd;
+	padding-left:  1.445rem;
+}
+footer {
+    text-align: initial;
+}
+header{
+	text-align: center;
+}
+section {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: thin solid #eee;
+    display: block;
+  	margin-bottom: 7px;
+    width: 100%;
+}
+aside {
+    display: block;
+	float: left;
+	margin-right: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+    box-sizing: border-box; 
+    width: 100%;
+}
+aside > header {
+    margin-top: -15px;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small {
+    font-style: italic;
+    color: #676767;
+}
+h1, h2, h3 {
+    letter-spacing: .58px;
+    text-shadow: 0px 2px 3px #aaa; 
+}
+p {
+	margin: 0 0 1.445rem 0;
+	line-height: 1.444em;
+}
+div p:first-child {
+    margin-top: 1.445rem;
+}
+p:first-letter {
+	margin-left: .4582em;
+}
+/* half height margin on last paragraph */
+div p:last-child,
+section p:last-child,
+article section p:last-child,
+article p:last-child,
+p:last-child {
+    margin-bottom: .7225rem;
+}
+/* external links icon after link 
+   external-link.png = 14px 
+   TODO a[target="_blank"]::after:not(nav ul li a[target="_blank"])
+*/
+a.external:after,
+a.ext:after,
+a[target="_blank"]:after {
+	content:    url("imgs/external-link.png");
+	background: rgba(252, 252, 252, .75) none repeat scroll 0% 0%;
+	position:   relative;
+	display:    inline-block;
+	right:      -1px;
+	top:        0px;
+	height:     1.167em;
+}
+a { 
+    color:           #05d;
+    text-decoration: none;
+    text-shadow:     .25px .5px 1px #939393;
+}
+a:visited{
+    color: #76448a;
+}
+a:hover {
+    text-decoration: underline;
+    opacity:         .9;
+    text-shadow:     none;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	
+}
+figure{
+    postiion: relative;
+    boxsizing: border-box;
+}
+figcaption,
+time{
+    color: #656565;
+    font-size: .938rem;
+    font-style: italic;
+    text-align: center;
+    margin-left: 7px;
+        margin-right: 7px;
+    }
+
+nav {
+  margin-bottom: 7px;
+}    
+nav ul {
+	display: block;
+	list-style: none;
+	padding: 7px;
+	max-width: 100%;
+	height: calc(10vw + 10vh);
+	border-bottom: thin solid #eee;
+	margin: 0 auto 7px auto;
+}	
+nav ul li {
+   	float: left;
+   	margin: 1px auto;
+   	position: relative; 
+   	width: 100%;
+}
+nav ul li a {
+	display: block;
+	padding: 5px;
+	margin-bottom: 1px;
+	border-radius: 1.222px;
+}
+@media all and (min-width: 768px) {
+    div:after,
+    section:after,
+    header:after,
+    footer:after,
+    article:after {
+        clear: left;
+        display: table;
+        content: " ";
+    }
+    section {
+	    width: calc(66.66666667% - 30px);
+	    display: inline;
+    }
+    article{
+        width: 100%;
+    }
+	aside {
+	    float:   left;
+	    width:    calc(33.33333336% - 30px);
+	    display:   block;
+	   	margin-top: 15px;
+	   	margin-left: 15px;
+	   	margin-right: 15px;
+    }
+    /* if Article has Aside(s) but No Section tag 
+       (Sections are displayed inline;) */
+    article > aside {
+        float:        right;
+        margin-right: 30px;
+    }
+    article section aside {
+        margin-left: 15px;
+    }
+    article section aside:first-child{
+        margin-left: 15px;
+        float:       left;
+    }
+    body.rtl aside {
+        margin-left:  15px;
+	   	margin-right: auto;
+	}
+	body.rtl article section aside {
+        margin-right: 15px;
+    }
+    body.rtl article section aside:first-child{
+        margin-right: 15px;
+        float:        right;
+    }
+    nav {
+        width: 98.8992%;
+    }
+	nav ul {
+		display: block;
+		list-style: none;
+		margin: 0 auto;
+		padding: 7px;
+		width: 100%;
+		height: 2.5em;
+		border-bottom: thin solid #eee;
+		background: #222;
+	}	
+    nav ul li {
+    	float: left;
+    	margin: 5px 2px;
+    	position: relative;
+    	width: auto;
+    }
+    nav ul li:first-child {
+	    margin-left: 5px;
+    }
+    nav ul li a {
+    	margin-bottom: 0px;
+    }
+}
+/* ends mobile first */
+/* Table elements */
+table {
+    border-spacing: 0;
+    width: 100%;
+ 	margin-bottom: 7px;
+}
+tbody{
+    word-wrap: normal;
+}
+th {
+    background: #404853;
+    background: linear-gradient(#687587, #404853);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 8px;
+    text-align: left;
+    text-transform: uppercase;
+}
+th:first-child {
+    border-top-left-radius: 4px;
+    border-left: 0;
+}
+th:last-child {
+    border-top-right-radius: 4px;
+    border-right: 0;
+}
+td {
+    border-right: 1px solid #c6c9cc;
+    border-bottom: 1px solid #c6c9cc;
+    padding: 8px;
+}
+td:first-child {
+    border-left: 1px solid #c6c9cc;
+}
+tr:first-child td {
+    border-top: 0;
+}
+tr:nth-child(even) td {
+    background: #e8eae9;
+}
+tr:last-child td:first-child {
+    border-bottom-left-radius: 4px;
+}
+tr:last-child td:last-child {
+    border-bottom-right-radius: 4px;
+}
+dt {
+	font-size: 103%;
+	line-height: 1.67
+}
+dl {
+	padding: 15px 0px;
+	word-wrap: normal;
+	white-space: pre-inline;
+	margin-bottom: 7px;
+}
+dd {
+	font-size: 98%;
+	color: #333;
+}
+mark {
+    color: #000;
+    background: #ff0;
+}
+small {
+    font-size: 80%;
+}
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+sup {
+    top: -.5em;
+}
+sub {
+    bottom: -.25em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+button {
+    overflow: visible;
+}
+button,
+select {
+    text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+form {
+    margin: 0 auto;
+    position: relative;
+    width: 90%;
+    height: 100%;
+}
+fieldset {
+    padding: 7px;
+    overflow: auto;
+    border: thin dashed #ddd;
+}
+label {
+    font-weight: bold;
+}
+input {
+    line-height: normal;
+}
+textarea {
+    overflow: auto;
+}
+optgroup {
+    font-weight: bold;
+}
+
+[role="button"] {
+    cursor: pointer;
+}
+abbr[title],
+abbr[data-original-title] {
+    cursor: help;
+    border-bottom: 1px dotted #777;
+}
+
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 5px solid #eee;
+}
+
+blockquote p:last-child,
+blockquote ul:last-child,
+blockquote ol:last-child {
+    margin-bottom: 0;
+}
+address {
+    margin-bottom: 20px;
+    font-style: normal;
+    line-height: 1.42857143;
+}
+code,
+xmp,
+pre,
+samp {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+button {
+    display: block;
+    padding: 6px 12px;
+    margin: 7px auto 0px auto;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+ 
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+button:hover,
+button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        color: #000 !important;
+        text-shadow: none !important;
+        background: transparent !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100%;
+        max-width: 100% !important;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+    .navbar {
+        display: none;
+    }
+    .btn>.caret,
+    .dropup>.btn>.caret {
+        border-top-color: #000 !important;
+    }
+    .label {
+        border: 1px solid #000;
+    }
+    .table {
+        border-collapse: collapse !important;
+    }
+    .table td,
+    .table th {
+        background-color: #fff !important;
+    }
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #ddd !important;
+    }
+    /* Setting content width, unsetting floats and margins */
+    #content {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+    /** Setting margins */
+    @page {
+        margin: 2cm
+    }
+    /* Set font to 16px/13pt, set background to white and font to black.*/
+    /* This saves ink */
+    body {
+        font-size: 13pt;
+        line-height: 1.3;
+        background: #fff !important;
+        color: #000;
+    }
+    h1 {
+        font-size: 24pt;
+    }
+    h2,
+    h3,
+    h4 {
+        font-size: 14pt;
+        margin-top: 25px;
+    }
+    /* Defining all page breaks */
+    a {
+        page-break-inside: avoid
+    }
+    blockquote {
+        page-break-inside: avoid;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid
+    }
+    img {
+        page-break-inside: avoid;
+        page-break-after: avoid;
+    }
+    table,
+    pre {
+        page-break-inside: avoid
+    }
+    ul,
+    ol,
+    dl {
+        page-break-before: avoid
+    }
+    /* Displaying link color and link behaviour */
+    a:link,
+    a:visited,
+    a {
+        background: transparent;
+        color: #520;
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: left;
+    }
+    a {
+        page-break-inside: avoid
+    }
+    a[href^=http]:after {
+        content: " < " attr(href) "> ";
+    }
+    $a:after>img {
+        content: "";
+    }
+    article a[href^="#"]:after {
+        content: "";
+    }
+    a:not(:local-link):after {
+        content: " < " attr(href) "> ";
+    }
+    code,
+    pre {
+        font-family: "Courier New", Courier, mono
+    }
+    ul,
+    ol {
+        list-style: square;
+        margin-left: 18pt;
+        margin-bottom: 20pt;
+    }
+    li {
+        line-height: 1.6em;
+    }
+    #commentform,
+    #sidbar-left,
+    #sidebar-right {
+        display: none;
+    }
+}
+/* show urls after link 
+a:after {
+    color: #8c9198;
+    content: " (" attr(href) ")";
+    font-size: 11px;
+} */
+body.rtl nav ul li {
+	float: right;
+}
+body.rtl nav ul li:first-child {
+	margin-right: 5px;
+}
+/* TODO screen reader assets */
+
+/* rtl */
+body.rtl section {
+	float: right;
+	display: block;
+}
+body.rtl aside {
+	float: left;
+	display: inline;
+} 
+
+body.rtl header,
+body.rtl footer {
+    padding-right: 1.445rem;
+}
