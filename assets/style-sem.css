@@ -32,7 +32,7 @@ body {          background: #e5e6e9;
 	margin:      7px 15px;
 	color:       #3b3b3b;
 	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+        -moz-osx-font-smoothing: grayscale;
 }
 /* Adding a body class gives rounded borders on almost everything */
 body.border-round section,
