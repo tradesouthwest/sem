@@ -2,6 +2,8 @@
  * Author: Tradesouthwest 
  * Mobile first set at 768px;
  */
+/* TODO screen reader assets */
+ @charset "UTF-8";
 /**
 MICRO RESET
 ==================================================== */
@@ -11,12 +13,13 @@ padding : 0;
 border : 0;
 outline : 0;
 vertical-align : baseline;
-background : transparent;
+
 } 
 html {
 height : 100%;
+max-width: 1920px;
 }
-@charset "UTF-8";
+
 /* one liners at top for background-color easy access */
 div {           background: #f6f6f6;}
 aside {         background: #f7f9f9}
@@ -32,7 +35,7 @@ body {          background: #e5e6e9;
 	margin:      7px 15px;
 	color:       #3b3b3b;
 	-webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
 }
 /* Adding a body class gives rounded borders on almost everything */
 body.border-round section,
@@ -79,16 +82,16 @@ div {
 	background:    transparent;
 	margin-bottom: 0;
 	display:       block;
-}
+} 
 /* article followed by a div(container) can lessen top-space on first div */
 article > div {
-    padding-top: 1px;
+    padding-top:   1px;
 }
 /* Main can be used on full page or portions of page (wrapper).
    Has no significant use-case at current, other than semantics.
  */
 main {
-	width: 100%;
+	width:         100%;
 }
 /* Article element wraps articles/sections/asides (hence the 100% width; */
 article {
@@ -105,57 +108,107 @@ footer {
 	padding-left:  1.445rem;
 }
 footer {
-    text-align: initial;
+    text-align:    initial;
 }
 header{
-	text-align: center;
+	text-align:    center;
 }
 section {
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top:   15px;
+	padding-bottom:15px;
 	border-bottom: thin solid #eee;
-    display: block;
+    display:       block;
   	margin-bottom: 7px;
-    width: 100%;
+    width:         100%;
 }
 aside {
-    display: block;
-	float: left;
-	margin-right: 15px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-    box-sizing: border-box; 
-    width: 100%;
+    display:       block;
+	float:         left;
+	margin-right:  15px;
+	padding-top:   15px;
+	padding-bottom:15px;
+    box-sizing:    border-box; 
+    width:         100%;
 }
 aside > header {
-    margin-top: -15px;
+    margin-top:    -15px;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small {
-    font-style: italic;
-    color: #676767;
+    font-style:    italic;
+    color:         rgb(102,102,102)
 }
 h1, h2, h3 {
-    letter-spacing: .58px;
-    text-shadow: 0px 2px 3px #aaa; 
+    letter-spacing:.58px;
+    text-shadow:   0px 2px 3px #aaa; 
+}
+h1 {
+ 	font-size:     40px;
+ 	color:         rgb(50,50,50);
+}
+h1 a, h2 a {
+    opacity:       .75;
+}
+h2 {
+ 	font-size:     30px;
+ 	color:         rgb(69,70,90);
+}
+h3 {
+ 	font-size:      22px
+}
+h4 {
+ 	font-size:      20px; 
+ 	color:          rgb(88,88,88);
+ 	padding:        5px 0;
+ 	text-align:     center;
+}
+h5 {
+ 	font-size:      15px;
+	font-weight:    600;
+}
+h6 {
+    font-size:      15px;
+    font-weight:    400;
 }
 p {
-	margin: 0 0 1.445rem 0;
-	line-height: 1.444em;
+	margin:         0 0 1.445rem 0;
+	line-height:    1.444em;
+	font-size:      calc(1.03em - .13333vw);
 }
 div p:first-child {
-    margin-top: 1.445rem;
+    margin-top:     1.445rem;
 }
 p:first-letter {
-	margin-left: .4582em;
+	margin-left:    .4582em;
 }
 /* half height margin on last paragraph */
-div p:last-child,
-section p:last-child,
+div             p:last-child,
+section         p:last-child,
 article section p:last-child,
-article p:last-child,
-p:last-child {
-    margin-bottom: .7225rem;
+article         p:last-child,
+                p:last-child {
+    margin-bottom:  .7225rem;
 }
+div p,
+nav p,
+section p,
+header p,
+footer p,
+article p {
+    padding-left: calc(.67vw + 28px);
+    padding-right: calc(.67vw + 28px);
+}
+div form p,
+article form p,
+section form p,
+footer p,
+header p,
+aside ~ p,
+aside p,
+aside > p {
+    padding-left:  0;
+    padding-right: 0;
+}
+
 /* external links icon after link 
    external-link.png = 14px 
    TODO a[target="_blank"]::after:not(nav ul li a[target="_blank"])
@@ -163,13 +216,42 @@ p:last-child {
 a.external:after,
 a.ext:after,
 a[target="_blank"]:after {
-	content:    url("imgs/external-link.png");
-	background: rgba(252, 252, 252, .75) none repeat scroll 0% 0%;
-	position:   relative;
-	display:    inline-block;
-	right:      -1px;
-	top:        0px;
-	height:     1.167em;
+	content:        url("imgs/external-link-18x16.png");
+	position:       relative;
+	display:        inline-block;
+	right:          -1px;
+	top:            0px;
+	height:         1.167em;
+}
+/* content: "Click to Copy Link for Bookmark"; */
+a[rel="bookmark"]:after {
+    content: "";
+    color: #aaeafa;
+    box-shadow:      none;
+    text-shadow:     none;
+    border:          none;
+    outline:         none;
+    font-size:       10px;
+    position:        relative;
+    display:         inline;
+    vertical-align:  middle;
+    left:            1em;
+}
+a[rel="bookmark"]:after:hover {
+    color:           #555;
+} 
+a[rel="bookmark"]:before {
+    content:         url("imgs/copy-link-16x16.png");
+	position:        relative;
+	display:         inline-block;
+	opacity:         .4;
+	top:             -.67rem;
+}
+span a[rel="first"] {
+    display:         inline-block;
+    position:        relative;
+    left:            30px;
+    font-size:       smaller;
 }
 a { 
     color:           #05d;
@@ -177,7 +259,7 @@ a {
     text-shadow:     .25px .5px 1px #939393;
 }
 a:visited{
-    color: #76448a;
+    color:           #76448a;
 }
 a:hover {
     text-decoration: underline;
@@ -185,72 +267,74 @@ a:hover {
     text-shadow:     none;
 }
 img {
-	max-width: 100%;
-	height: auto;
-	
+	max-width:       100%;
+	height:          auto;
 }
 figure{
-    postiion: relative;
-    boxsizing: border-box;
+    postiion:        relative;
+    boxsizing:       border-box;
 }
 figcaption,
 time{
-    color: #656565;
-    font-size: .938rem;
-    font-style: italic;
-    text-align: center;
-    margin-left: 7px;
-        margin-right: 7px;
+    color:           #656565;
+    font-size:       .938rem;
+    font-style:      italic;
+    text-align:      center;
+    margin-left:     7px;
+    margin-right:    7px;
     }
 
 nav {
-  margin-bottom: 7px;
+    margin-bottom:   7px;
 }    
 nav ul {
-	display: block;
-	list-style: none;
-	padding: 7px;
-	max-width: 100%;
-	height: calc(10vw + 10vh);
-	border-bottom: thin solid #eee;
-	margin: 0 auto 7px auto;
+	display:         block;
+	list-style:      none;
+	padding:         7px;
+	max-width:       100%;
+	height:          calc(10vw + 10vh);
+	border-bottom:   thin solid #eee;
+	margin:          0 auto 7px auto;
 }	
 nav ul li {
-   	float: left;
-   	margin: 1px auto;
-   	position: relative; 
-   	width: 100%;
+   	float:           left;
+   	margin:          1px auto;
+   	position:        relative; 
+   	width:           100%;
 }
 nav ul li a {
-	display: block;
-	padding: 5px;
-	margin-bottom: 1px;
-	border-radius: 1.222px;
+	display:         block;
+	padding:         5px;
+	margin-bottom:   1px;
+	border-radius:   1.222px;
 }
+/* ====================================================== 
+ * Media break point for mobile and tablets 
+ */
 @media all and (min-width: 768px) {
     div:after,
     section:after,
     header:after,
     footer:after,
     article:after {
-        clear: left;
-        display: table;
+        clear:       left;
+        display:     table;
         content: " ";
     }
     section {
-	    width: calc(66.66666667% - 30px);
-	    display: inline;
+	    width:       calc(66.66666667% - 30px);
+	    display:     inline;
     }
     article{
-        width: 100%;
+        width:       100%;
     }
 	aside {
-	    float:   left;
-	    width:    calc(33.33333336% - 30px);
-	    display:   block;
-	   	margin-top: 15px;
-	   	margin-left: 15px;
-	   	margin-right: 15px;
+	    float:       left;
+	    width:       calc(33.33333336% - 30px);
+	    display:     block;
+	   	margin-top:  15px;
+	   	margin-left:  15px;
+	   	margin-right:  15px;
     }
     /* if Article has Aside(s) but No Section tag 
        (Sections are displayed inline;) */
@@ -259,11 +343,11 @@ nav ul li a {
         margin-right: 30px;
     }
     article section aside {
-        margin-left: 15px;
+        margin-left:  15px;
     }
     article section aside:first-child{
-        margin-left: 15px;
-        float:       left;
+        margin-left:  15px;
+        float:        left;
     }
     body.rtl aside {
         margin-left:  15px;
@@ -277,72 +361,72 @@ nav ul li a {
         float:        right;
     }
     nav {
-        width: 98.8992%;
+        width:        98.8992%;
     }
 	nav ul {
-		display: block;
-		list-style: none;
-		margin: 0 auto;
-		padding: 7px;
-		width: 100%;
-		height: 2.5em;
-		border-bottom: thin solid #eee;
-		background: #222;
+		display:      block;
+		list-style:   none;
+		margin:       0 auto;
+		padding:      7px;
+		width:        100%;
+		height:       2.5em;
+		border-bottom:thin solid #eee;
+		background:   #222;
 	}	
     nav ul li {
-    	float: left;
-    	margin: 5px 2px;
-    	position: relative;
-    	width: auto;
+    	float:        left;
+    	margin:       5px 2px;
+    	position:     relative;
+    	width:        auto;
     }
     nav ul li:first-child {
-	    margin-left: 5px;
+	    margin-left:  5px;
     }
     nav ul li a {
-    	margin-bottom: 0px;
+    	margin-bottom:0px;
     }
 }
 /* ends mobile first */
 /* Table elements */
 table {
-    border-spacing: 0;
-    width: 100%;
- 	margin-bottom: 7px;
+    border-spacing:   0; 
+    width:            100%;
+ 	margin-bottom:    7px;
 }
 tbody{
-    word-wrap: normal;
+    word-wrap:        normal;
 }
 th {
-    background: #404853;
-    background: linear-gradient(#687587, #404853);
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    color: #fff;
-    padding: 8px;
-    text-align: left;
-    text-transform: uppercase;
+    background:       #404853;
+    background:       linear-gradient(#687587, #404853);
+    border-left:      1px solid rgba(0, 0, 0, 0.2);
+    border-right:     1px solid rgba(255, 255, 255, 0.1);
+    color:            #fff;
+    padding:          8px;
+    text-align:       left;
+    text-transform:   uppercase;
 }
 th:first-child {
     border-top-left-radius: 4px;
-    border-left: 0;
+    border-left:            0;
 }
 th:last-child {
     border-top-right-radius: 4px;
-    border-right: 0;
+    border-right:            0;
 }
 td {
-    border-right: 1px solid #c6c9cc;
-    border-bottom: 1px solid #c6c9cc;
-    padding: 8px;
+    border-right:     1px solid #c6c9cc;
+    border-bottom:    1px solid #c6c9cc;
+    padding:          8px;
 }
 td:first-child {
-    border-left: 1px solid #c6c9cc;
+    border-left:      1px solid #c6c9cc;
 }
 tr:first-child td {
-    border-top: 0;
+    border-top:       0;
 }
 tr:nth-child(even) td {
-    background: #e8eae9;
+    background:       #e8eae9;
 }
 tr:last-child td:first-child {
     border-bottom-left-radius: 4px;
@@ -351,110 +435,83 @@ tr:last-child td:last-child {
     border-bottom-right-radius: 4px;
 }
 dt {
-	font-size: 103%;
-	line-height: 1.67
+	font-size:        103%;
+	line-height:      1.67;
 }
 dl {
-	padding: 15px 0px;
-	word-wrap: normal;
-	white-space: pre-inline;
-	margin-bottom: 7px;
+	padding:          15px 0px;
+	word-wrap:        normal;
+	white-space:      pre-inline;
+	margin-bottom:    7px;
 }
 dd {
-	font-size: 98%;
-	color: #333;
+	font-size:        98%;
+	color:            #333;
 }
 mark {
-    color: #000;
-    background: #ff0;
+    color:            #000;
+    background:       #ff0;
 }
 small {
-    font-size: 80%;
+    font-size:        80%;
 }
 sub,
 sup {
-    position: relative;
-    font-size: 75%;
-    line-height: 0;
-    vertical-align: baseline;
+    position:         relative;
+    font-size:        75%;
+    line-height:      0;
+    vertical-align:   baseline;
 }
 sup {
-    top: -.5em;
+    top:              -.5em;
 }
 sub {
-    bottom: -.25em;
-}
-button,
-input,
-optgroup,
-select,
-textarea {
-    margin: 0;
-    font: inherit;
-    color: inherit;
-}
-button {
-    overflow: visible;
-}
-button,
-select {
-    text-transform: none;
-}
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer;
-}
-button[disabled],
-html input[disabled] {
-    cursor: default;
+    bottom:           -.25em;
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-}
 form {
-    margin: 0 auto;
-    position: relative;
-    width: 90%;
-    height: 100%;
+    margin:           0 auto;
+    position:         relative;
+    width:            90%;
+    height:           100%;
 }
 fieldset {
-    padding: 7px;
-    overflow: auto;
-    border: thin dashed #ddd;
+    padding:          7px;
+    overflow:         auto;
+    border:           thin dashed #ddd;
 }
 label {
-    font-weight: bold;
+    font-weight:      bold;
+    margin-right:     .34em;
 }
-input {
-    line-height: normal;
+input,
+textarea,
+select {
+    line-height:      normal;
+    border-radius:    0;
+    border:           1px solid #79a;
 }
 textarea {
-    overflow: auto;
+    overflow:         auto;
 }
 optgroup {
-    font-weight: bold;
+    font-weight:      bold;
 }
 
 [role="button"] {
-    cursor: pointer;
+    cursor:           pointer;
 }
 abbr[title],
 abbr[data-original-title] {
-    cursor: help;
-    border-bottom: 1px dotted #777;
+    cursor:           help;
+    border-bottom:    1px dotted #777;
 }
 
 blockquote {
-    padding: 10px 20px;
-    margin: 0 0 20px;
-    font-size: 17.5px;
-    border-left: 5px solid #eee;
+    padding:          10px 20px;
+    margin:           0 0 20px;
+    font-size:        17.5px;
+    border-left:      5px solid #eee;
 }
 
 blockquote p:last-child,
@@ -464,8 +521,8 @@ blockquote ol:last-child {
 }
 address {
     margin-bottom: 20px;
-    font-style: normal;
-    line-height: 1.42857143;
+    font-style:    normal;
+    line-height:   1.42857143;
 }
 code,
 xmp,
@@ -473,86 +530,131 @@ pre,
 samp {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-
 code {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: #c7254e;
+    padding:          2px 4px;
+    font-size:        90%;
+    color:            #c7254e;
     background-color: #f9f2f4;
-    border-radius: 4px;
+    border-radius:    4px;
 }
-
 pre {
-    display: block;
-    padding: 9.5px;
-    margin: 0 0 10px;
-    font-size: 13px;
-    line-height: 1.42857143;
-    color: #333;
-    word-break: break-all;
-    word-wrap: break-word;
+    display:          block;
+    padding:          9.5px;
+    margin:           0 0 10px;
+    font-size:        13px;
+    line-height:      1.42857143;
+    color:            #333;
+    word-break:       break-all;
+    word-wrap:        break-word;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius:    4px;
 }
 
 pre code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    white-space: pre-wrap;
+    padding:          0;
+    font-size:        inherit;
+    color:            inherit;
+    white-space:      pre-wrap;
     background-color: transparent;
-    border-radius: 0;
+    border-radius:    0;
 }
 
 legend {
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: inherit;
-    color: #333;
-    border: 0;
-    border-bottom: 1px solid #e5e5e5;
+    display:          block;
+    width:            100%;
+    padding:          0 0 0 .34em;
+    margin-bottom:    20px;
+    font-size:        21px;
+    line-height:      inherit;
+    color:            #333;
+    border:           0;
+    border-bottom:    1px solid #e5e5e5;
 }
-
-
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin:         0;
+    font:           inherit;
+    color:          inherit;
+}
 button {
-    display: block;
-    padding: 6px 12px;
-    margin: 7px auto 0px auto;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
+    overflow:       visible;
 }
- 
+button,
+select {
+    text-transform: none;
+}
+p select {
+    margin-left:    .485em;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor:             pointer;
+}
+button[disabled],
+html input[disabled] {
+    cursor:             default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    display:          block;
+    padding:          6px 12px;
+    margin:           7px auto 0px auto;
+    font-size:        14px;
+    font-weight:      normal;
+    line-height:      1.42857143;
+    text-align:       center;
+    white-space:      nowrap;
+    vertical-align:   middle;
+-ms-touch-action:     manipulation;
+    touch-action:     manipulation;
+    cursor:           pointer;
+-webkit-user-select:  none;
+   -moz-user-select:  none;
+    -ms-user-select:  none;
+    user-select:      none;
+    background-image: none;
+    border:           1px solid #abb;
+    border-radius:    3px;
+    box-shadow:       1px 1px 1px #677;
+}
+input[type="reset"] {
+    background-color: maroon;
+    color:            #fff;
+} 
+input[type="reset"]:hover {
+    color:            yellow;
+    background:       #942;
+}
+input[type="submit"] {
+    margin-left:      .6em;
+}
 button:focus,
 button:active:focus,
 button.active:focus,
 button.focus,
 button:active.focus,
 button.active.focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
+    outline:          5px auto -webkit-focus-ring-color;
+    outline-offset:   -2px;
 }
 
 button:hover,
 button:focus {
-    color: #333;
+    color:           #333;
     text-decoration: none;
 }
 
@@ -560,11 +662,11 @@ button:focus {
     *,
     *:before,
     *:after {
-        color: #000 !important;
+        color:       #000 !important;
         text-shadow: none !important;
-        background: transparent !important;
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important;
+        background:  transparent !important;
+-webkit-box-shadow:  none !important;
+        box-shadow:  none !important;
     }
     a,
     a:visited {
@@ -606,29 +708,25 @@ button:focus {
     h3 {
         page-break-after: avoid;
     }
-    .navbar {
+    nav {
         display: none;
     }
-    .btn>.caret,
-    .dropup>.btn>.caret {
-        border-top-color: #000 !important;
-    }
-    .label {
+    label {
         border: 1px solid #000;
     }
-    .table {
+    table {
         border-collapse: collapse !important;
     }
-    .table td,
-    .table th {
+    table td,
+    table th {
         background-color: #fff !important;
     }
-    .table-bordered th,
-    .table-bordered td {
+    table-bordered th,
+    table-bordered td {
         border: 1px solid #ddd !important;
     }
     /* Setting content width, unsetting floats and margins */
-    #content {
+    main {
         width: 100%;
         margin: 0;
         float: none;
@@ -699,7 +797,7 @@ button:focus {
     a[href^=http]:after {
         content: " < " attr(href) "> ";
     }
-    $a:after>img {
+    a:after>img {
         content: "";
     }
     article a[href^="#"]:after {
@@ -721,37 +819,33 @@ button:focus {
     li {
         line-height: 1.6em;
     }
-    #commentform,
-    #sidbar-left,
-    #sidebar-right {
-        display: none;
-    }
 }
-/* show urls after link 
-a:after {
-    color: #8c9198;
-    content: " (" attr(href) ")";
-    font-size: 11px;
-} */
+/**
+ =============================================================
+ RTL
+ */
 body.rtl nav ul li {
-	float: right;
+	float:         right;
 }
 body.rtl nav ul li:first-child {
-	margin-right: 5px;
+	margin-right:  5px;
 }
-/* TODO screen reader assets */
-
-/* rtl */
 body.rtl section {
-	float: right;
-	display: block;
+	float:         right;
+	display:       block;
 }
 body.rtl aside {
-	float: left;
-	display: inline;
+	float:         left;
+	display:       inline;
 } 
 
 body.rtl header,
 body.rtl footer {
     padding-right: 1.445rem;
 }
+body.rtl label {
+    margin-left:   .34em;
+} 
+body.rtl input[type="submit"] {
+    margin-right:  .6em;
+} 
